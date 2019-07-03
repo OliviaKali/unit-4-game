@@ -1,0 +1,46 @@
+body {
+    margin: 30px;
+    background: url("../images/pipes.png");
+}
+
+h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 20px;
+    padding: 10px;
+}
+
+#randomNumber {
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#win-text, #losses-text {
+    font-size: 25px;
+    padding: 10px;
+}
+
+#score-text {
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+#totalScore {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+img {
+    padding: 30px;
+}
+
+section {
+    background: seagreen;
+    color: white;
+}

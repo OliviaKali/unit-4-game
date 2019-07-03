@@ -4,9 +4,7 @@ $(document).ready(function () {
     var losses = 0;
     var score = 0;
 
-    var randomNum = 50
-    //  (Math.floor(Math.random() * 102) + 19);
-    //make sure randomNum formula is correct and only goes between 19-120
+    var randomNum = (Math.floor(Math.random() * 102) + 19);
 
     var crystal1 = (Math.floor(Math.random() * 12) + 1);
     var crystal2 = (Math.floor(Math.random() * 12) + 1);
@@ -21,11 +19,12 @@ $(document).ready(function () {
 
     //for ( var i = 0; i <4; i++) {
 
+    $("#randomNumber").text("Random #: " + randomNum);
+
     $("#crystal-1").on("click", function () {
         score = score + crystal1;
-
         checker(score)
-
+        $("#totalScore").text(score);
         console.log("now the score is: " + score);
         // $("#score").html(score);
     })
@@ -33,43 +32,39 @@ $(document).ready(function () {
     $("#crystal-2").on("click", function () {
         score = score + crystal2;
         checker(score)
+        $("#totalScore").text(score);
         console.log("now the score is: " + score);
     })
 
     $("#crystal-3").on("click", function () {
         score = score + crystal3;
         checker(score)
+        $("#totalScore").text(score);
         console.log("now the score is: " + score);
     })
 
     $("#crystal-4").on("click", function () {
         score = score + crystal4;
         checker(score)
+        $("#totalScore").text(score);
         console.log("now the score is: " + score);
     })
 
 
-    function checker(number){
-        if(number === randomNum){
-            console.log("Winner");
-            wins++;
-        $("#win-text").text("Wins: " + wins)
-            reset();
-        }  
-        if(number > randomNum){
+    function checker(number) {
+        if (number > randomNum) {
             console.log("You lose!");
             losses++;
             $("#losses-text").text("Losses: " + losses)
             reset();
-            //if number > randomNumber, then the losses go up.
-
+        }
+        if (number === randomNum) {
+            console.log("Winner");
+            wins++;
+            $("#win-text").text("Wins: " + wins)
+            reset();
+        }
     }
-}
-
-    //}
-
-    // function ()
-    //  totalscore = score + crysal1 
 
     function reset() {
         score = 0
@@ -80,6 +75,8 @@ $(document).ready(function () {
         crystal3 = (Math.floor(Math.random() * 12) + 1);
         crystal4 = (Math.floor(Math.random() * 12) + 1);
 
+        $("#randomNumber").text("Random #: " + randomNum);
+
         console.log(wins)
         console.log(randomNum)
         console.log("crystal1 " + crystal1);
@@ -87,24 +84,6 @@ $(document).ready(function () {
         console.log("crystal3: " + crystal3);
         console.log("crystal4: " + crystal4);
     }
-
-    // if (score = randomNum) {
-    //     wins++
-    // }
-
-    // if (totalScore = randomNum) {
-    //     wins++
-    // }
-
-    // if (totalScore = randomNum)
-
-    // else if (score > randomNum) {
-    //     losses++
-    //     $("#losses-text").html(losses);
-    //     reset()
-    // }
-    // else user can continue to click the numbers to try to get the randomNum
-
 });
 
     //assign a random number generator (1-12) for each crystal
